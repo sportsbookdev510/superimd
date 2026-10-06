@@ -129,7 +129,7 @@
     {
       "at": "2026-10-04T14:40:00.000Z",
       "title": "Vault and token contracts",
-      "summary": "Header CA set to SIMD token 0xComingSoon. Vault 0xd60483Eb8004e3DE3e283b3efF0e67FBb57f9B21 tracks IMD balance and outgoing payout transfers. Test contracts stayed out of the UI."
+      "summary": "Header CA set to SIMD token 0xb6026518463ec80f1cb33e4318e802487c27f995. Vault 0xd60483Eb8004e3DE3e283b3efF0e67FBb57f9B21 tracks IMD balance and outgoing payout transfers. Test contracts stayed out of the UI."
     },
     {
       "at": "2026-10-04T13:30:00.000Z",

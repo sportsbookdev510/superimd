@@ -4797,7 +4797,7 @@ function mountStartLegacy() {
 }
 
 function mountDocs() {
-  const TOKEN = "0xComingSoon";
+  const TOKEN = "0xb6026518463ec80f1cb33e4318e802487c27f995";
   const VAULT = "0xd60483Eb8004e3DE3e283b3efF0e67FBb57f9B21";
   const IMD = "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7";
   stage.innerHTML = `
