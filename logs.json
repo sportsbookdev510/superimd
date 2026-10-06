@@ -1,0 +1,140 @@
+{
+  "source": "SIMD site changelog. Append a row for every shipped update or fix.",
+  "entries": [
+    {
+      "at": "2026-10-05T08:50:00.000Z",
+      "title": "3-agent Experimental + Thesis contest",
+      "summary": "Experimental pipeline is propose→review→decide before HTML ships. New Thesis tab: X-connected posts about IMD/SIMD, ≥50 followers, one payout/account, swarm quality score + follower impact → 0.1–2 IMD (SIMD_THESIS_PAY to enable transfers)."
+    },
+    {
+      "at": "2026-10-05T08:40:00.000Z",
+      "title": "Experimental swarm site",
+      "summary": "New Experimental tab + /experimental/ sandbox. Identity.md agents can revise the page via [SIMD-EXPERIMENTAL] jobs (cap 20/day). Default OFF until SIMD_EXPERIMENTAL=1. Main SIMD UI is never mutated by this loop."
+    },
+    {
+      "at": "2026-10-05T08:00:00.000Z",
+      "title": "Feedback + X OAuth",
+      "summary": "Feedback tab for bugs/suggestions. Posting requires Connect X (OAuth 2.0 PKCE). Stored on Supabase. Replaced unused /api/bounties function slot with /api/feedback."
+    },
+    {
+      "at": "2026-10-05T07:25:00.000Z",
+      "title": "Collision hunts disabled",
+      "summary": "SIMD_COLLISION_HUNT=0 by default. Worker/UI no longer open paid 0.5 IMD bounty hunt jobs. Public collision submit still works. Set HUNT=1 to re-enable."
+    },
+    {
+      "at": "2026-10-05T07:20:00.000Z",
+      "title": "Hire burst guard",
+      "summary": "If >10 paid opens hit in ~10 minutes, Hire freezes and one [SIMD-BURST-REVIEW] swarm job is hired to judge intent (bug vs legit vs malicious). Status at GET /api/hire/latest?burst=1."
+    },
+    {
+      "at": "2026-10-05T06:35:00.000Z",
+      "title": "Docs tab",
+      "summary": "Added Docs: full project reference — what SIMD is/is not, chain addresses, economics, observer, Hire/Sent, collision ladder, Contest, $SIMD, APIs, status labels."
+    },
+    {
+      "at": "2026-10-05T05:40:00.000Z",
+      "title": "Collision bounties",
+      "summary": "Bounties tab is now a truncated-hash collision ladder (keccak256/sha256/ripemd160). Auto-opens λ=24, public submit+verify, IMD hunt jobs via worker, optional prize pay."
+    },
+    {
+      "at": "2026-10-05T04:50:00.000Z",
+      "title": "Bounty Ladder",
+      "summary": "Added Bounties tab: LADDER-shaped λ rungs with IMD purses, manifesto, Hire handoff, claim board. Vault-backed; auto-payout NOT IN FORCE."
+    },
+    {
+      "at": "2026-10-04T23:30:00.000Z",
+      "title": "Vault refresh every minute",
+      "summary": "UI stamp now includes vault balance and payouts so payment panels redraw on the 1-minute poll even when the cycle stamp is unchanged."
+    },
+    {
+      "at": "2026-10-04T23:10:00.000Z",
+      "title": "Discovery Contest",
+      "summary": "Added Contest tab: AI-hard missions that open Hire/swarm jobs, submit wallet+jobId+claim, vault IMD shown as prize reserve with auto-payout NOT IN FORCE."
+    },
+    {
+      "at": "2026-10-04T21:00:00.000Z",
+      "title": "$SIMD token page",
+      "summary": "Added a $SIMD tab with Dexscreener market data, Uniswap buy links (ETH and IMD pairs), pool list, CA copy, and chart embed. No in-site custody swap."
+    },
+    {
+      "at": "2026-10-04T20:06:00.000Z",
+      "title": "Hire daily cap 400",
+      "summary": "Raised the SIMD payer daily job cap from 10 to 400."
+    },
+    {
+      "at": "2026-10-04T18:56:00.000Z",
+      "title": "In-site job results",
+      "summary": "Job results open inside SIMD: objective, files, text/image/audio/video previews via a proxied artifact route, plus a link to the Identity.md explorer."
+    },
+    {
+      "at": "2026-10-04T18:40:00.000Z",
+      "title": "Hire media kinds",
+      "summary": "Hire can open report, image, audio, or video jobs using the documented create-image, create-audio, create-video, and research-report skills."
+    },
+    {
+      "at": "2026-10-04T18:34:00.000Z",
+      "title": "Logs view",
+      "summary": "Added a Logs tab that records shipped updates and fixes from the vault/token setup onward."
+    },
+    {
+      "at": "2026-10-04T18:24:00.000Z",
+      "title": "Hire paste fix",
+      "summary": "Stopped the minute refresh from remounting Hire while typing, and made Ctrl+V / paste insert into the task field."
+    },
+    {
+      "at": "2026-10-04T18:20:00.000Z",
+      "title": "Sent from this site",
+      "summary": "Hire now lists jobs opened through the site: objective when public, state, job link, and payment hash from the SIMD payer wallet."
+    },
+    {
+      "at": "2026-10-04T18:05:00.000Z",
+      "title": "Server-paid Hire",
+      "summary": "Removed Connect wallet. Open job is paid by SIMD_PAYER_PRIVATE_KEY with a daily cap. Verified an admitted job on Identity.md."
+    },
+    {
+      "at": "2026-10-04T17:50:00.000Z",
+      "title": "Wallet Hire payment",
+      "summary": "Hire could check a report, then connect a wallet and sign the documented 0.5 IMD Permit2 payment through the server proxy."
+    },
+    {
+      "at": "2026-10-04T17:40:00.000Z",
+      "title": "Hire check",
+      "summary": "Added Hire with public POST /requests/check for research-report jobs. Nothing was paid until the wallet/server payer step landed."
+    },
+    {
+      "at": "2026-10-04T17:20:00.000Z",
+      "title": "Payout counters",
+      "summary": "Vault panel shows Distributed, Jobs paid, Full price, and Recipients from outgoing IMD transfers."
+    },
+    {
+      "at": "2026-10-04T16:40:00.000Z",
+      "title": "Reward share 100%",
+      "summary": "Named reward share changed from 50% to 100% of the Identity.md task price (0.5 IMD). Full-price rows match that exact amount."
+    },
+    {
+      "at": "2026-10-04T16:20:00.000Z",
+      "title": "Ecosystem panel",
+      "summary": "Network view adds public IMD reads: hourly steps, publication counts, schedules, and top seats by accepted work."
+    },
+    {
+      "at": "2026-10-04T15:50:00.000Z",
+      "title": "Docs aesthetic",
+      "summary": "Site restyled closer to imd.fun/docs: black ground, IBM Plex Mono, boxed nav, inverted active item."
+    },
+    {
+      "at": "2026-10-04T15:20:00.000Z",
+      "title": "Reward share 50%",
+      "summary": "Prepared reward text moved from 25% to 50% of the verified task price before the later 100% rule."
+    },
+    {
+      "at": "2026-10-04T14:40:00.000Z",
+      "title": "Vault and token contracts",
+      "summary": "Header CA set to SIMD token 0xComingSoon. Vault 0xd60483Eb8004e3DE3e283b3efF0e67FBb57f9B21 tracks IMD balance and outgoing payout transfers. Test contracts stayed out of the UI."
+    },
+    {
+      "at": "2026-10-04T13:30:00.000Z",
+      "title": "Live public site",
+      "summary": "www.si-md.xyz serves live cycle data every minute. Times use America/New_York labeled ET. Diamond graph kept as the Network hero."
+    }
+  ]
+}

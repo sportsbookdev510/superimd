@@ -1,0 +1,739 @@
+{"title":"Thesis","subtitle":"Post a public X thesis on Identity.md + SIMD. A
+swarm agent scores quality + impact (followers). One payout per X
+account.","twitterConfigured":true,"authMode":"oauth2","me":null,"mine":null,"limits":{"minFollowers":50,"minPayImd":0.1,"maxPayImd":2,"minQualityToPay":8,"dailyPayCap":25,"minSimd":1000,"minThesisChars":900,"maxThesisChars":12000,"requiredMentions":["SuperIMDeth"],"onePayoutPerAccount":true},"payEnabled":true,"paidToday":0,"items":[{"id":"muwjb4vc-0z8rn","at":"2026-10-06T10:27:10.056Z","status":"rejected","thesis":"1/
+Identity.md sells agent work at 0.5 IMD per paid action. Since @SuperIMDeth's
+vault went live 41.6h ago, one SIMD wallet made 56.5% of those actions, and the
+vault refunds half of each.\n\nDoes SIMD broaden $IMD demand or recycle it?
+🧵\nhttps://api.imd.fun/requests/capabilities\n\n2/ Identity.md's revenue: the
+payTo holds 36 IMD and sent 642 to 0x047f, owner of the POOL4 hook. POOL4 sends
+85% of each trim to the burn path (33,279 IMD so far). SIMD's vault, dev and
+payer haven't moved IMD to or from POOL4 since
+launch.\nhttps://etherscan.io/address/0xc6c965bd164c483e87d0b550671798e9a3602840#readContract\n\n3/
+SIMD's vault reads refundBps() = 5000, so 50%, while SIMD's dashboard says
+\"100%\". All 447 refunds match real payments, and 56% of the 136.75 IMD
+returned went to SIMD's own
+payer.\nhttps://etherscan.io/address/0xd60483Eb8004e3DE3e283b3efF0e67FBb57f9B21#readContract\n\n4/
+Who pays Identity.md since launch: SIMD's payer 56.5%, seat holders and 0x047f
+payout recipients 17.7%, other wallets 25.8%. 55 of the payer's last 100 orders
+grade SIMD's own thesis
+contest.\nhttps://api.imd.fun/requests/paid-by/0x9fAdAB91f6FA03DBd7F4F8a08A338704bAAcf63f\n\n5/
+Non-SIMD payments since launch: 197, inside the 31 to 263 of earlier windows.
+Payers look broader: 57, above the earlier 15 to 56.\n\nTest for Oct 13 to 20:
+non-SIMD paid actions ≥786 (pace now 795). Proofs
+below\nhttps://etherscan.io/token/0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7?a=0x4e0fA57Bde726079356537E2F34d671E9F41ADbc","tweetUrl":"https://x.com/0xdropxtor/status/2107415171983405076","wallet":"0xe9876d035325887eee4383f377f586bd65e21f9c","simdBalance":2370.1137669558757,"twitter":{"id":"1586423376083664897","username":"0xDropxtor","name":"dropxtor","url":"https://x.com/0xDropxtor","followers":855},"score":{"quality":6,"impact":855,"impactNote":"Puts
+verifiable SIMD mechanics into IMD discourse (refundBps()=5000 confirmed
+on-chain, one payer funding ~56% of paid actions, and a possible gap with a
+dashboard advertising 100% refunds), which helps readers separate subsidised
+self-demand from organic demand.","notes":"Strengths: dense, IMD/SIMD-specific,
+names payTo, vault refundBps, the POOL4 trim/burn path and the 0x047f payout;
+0.5 IMD price and 50% refund verified. Weaknesses: never answers its own
+broaden-vs-recycle question; no net-demand model or counter-argument; the
+falsifiable test (>=786 vs pace 795) is nearly pre-confirmed; 'earlier windows'
+undefined; 447 refunds vs 136.75 IMD unreconciled; most percentages unproven
+in-thread. A data dump with a question, not a
+thesis.","flags":["thin"],"payoutImd":0,"at":"2026-10-06T10:37:03.210Z"},"payout":null,"reviewJobId":"a7bbec23-eae9-42b4-b5cf-864a97ca02b3","reviewJobUrl":"https://explorer.imd.fun/jobs/a7bbec23-eae9-42b4-b5cf-864a97ca02b3","reviewOrderId":"c4ba4597-0dbe-4050-8ec1-f6afa4046186"},{"id":"muwhe0xo-7g5oj","at":"2026-10-06T09:33:25.692Z","status":"rejected","thesis":"@SuperIMDeth
+has a useful economic signal hiding inside its execution data: payer diversity
+is visible, but demand diversity is not yet measurable from the public explorer.
+The current explorer reports 1,313 jobs, 1,230 completed, 83 incomplete and
+about 44.0K steps in 24h. Individual jobs expose a “paid by” address, and
+current completed jobs show different payer addresses across different pieces of
+work. Other jobs show the same payer address funding repeated work. The
+distinction is important because different wallets do not automatically mean
+different customers, while one wallet funding many jobs does not automatically
+mean one unit of demand.\n\nThis makes payment provenance more informative than
+a raw job count, but only if the provenance is interpreted correctly. The
+observable chain is already there: payer address → job → agents → execution →
+accepted output. What is missing is the economic identity behind the address. A
+protocol-controlled wallet, operator wallet, treasury, aggregator or genuinely
+external customer can all generate the same on-chain payment signal. Treating
+every payer as an independent customer would therefore inflate the apparent
+demand curve.\n\nPOOL4 creates a second reason to keep funding sources separate.
+Its CappedBurnHook retires excess IMD with 85% sent to burn and 15% distributed
+to rewards. That 15% is split into 4.5% for stakers, 6% for the
+lead-orchestrator bonding reserve and 4.5% for NFT inference nodes. The
+documentation explicitly describes the bonding and node allocations as reserves
+while those programs are being built. They therefore represent protocol-directed
+capital, not customer revenue or deployed compute.\n\nThe stronger economic
+measure is consequently not “how many jobs are being executed?” but “who is
+economically funding the execution?” Group jobs by payer provenance, identify
+repeat funding, separate protocol-controlled flows, and leave ambiguous
+addresses unresolved. Then compare each payer cohort’s funded jobs, accepted
+output, task class and repeat usage against total execution. This also prevents
+a burst of low-value or repeated work from being interpreted as equivalent to
+broadening external demand.\n\nThe test is falsifiable. If job growth is
+accompanied by a widening set of economically independent payer cohorts that
+repeatedly fund new work, execution is increasingly demand-backed. If job and
+execution counts rise while most funding remains concentrated in
+protocol-controlled, operator-linked or unresolved wallets, the evidence
+supports expanding capacity but does not yet establish equivalent growth in
+independent demand. If POOL4 reserves later fund execution, that flow should be
+tracked separately rather than folded into customer demand.\n\nThe important
+signal is therefore not the headline number of jobs or steps. It is the
+provenance behind the money funding those jobs. IMD already exposes payer
+addresses at the job level. The unresolved economic question is whether that
+visible payer diversity represents a genuinely widening customer base or simply
+more activity generated within the same funding
+network.","tweetUrl":"https://x.com/chidifinance_/status/2107403513605296288","wallet":"0x0FA65670053127F33Af86366151AB1f9c2749c6D","simdBalance":3763.026175481069,"twitter":{"id":"1700351881384464384","username":"chidifinance_","name":"Chidi
+Finance","url":"https://x.com/chidifinance_","followers":307},"score":{"quality":7,"impact":307,"impactNote":"The
+thesis improves IMD/SIMD discourse by replacing raw job growth with a
+conservative funding-provenance and concentration question, while warning that
+wallets are not customers and POOL4 reserves are not automatically
+revenue.","notes":"Strong IMD-specific mechanism and falsifiable direction.
+Below the pay bar because it supplies no measured payer cohorts,
+payment-weighted concentration, address sample, independence heuristic, or
+developed SIMD measurement layer; current explorer counts also differ from the
+thesis
+snapshot.","flags":["strong","thin"],"payoutImd":0,"at":"2026-10-06T09:37:27.916Z"},"payout":null,"reviewJobId":"a3cd4a2f-8736-47a7-a77f-cf40d401ed7e","reviewJobUrl":"https://explorer.imd.fun/jobs/a3cd4a2f-8736-47a7-a77f-cf40d401ed7e","reviewOrderId":"bb369d26-f3e9-4660-b88c-29d12d6e1462"},{"id":"muwhb3i8-7m9uv","at":"2026-10-06T09:31:09.056Z","status":"rejected","thesis":"Superintelligent
+Identity.md is building a service around the Identity.md network of AI agents.
+Its dApp tracks jobs completed by the swarm, while protocol fees are directed to
+a reserve that helps pay for or reimburse the cost of new tasks. The goal is to
+lower the barrier to using the network: users can submit jobs and have some, or
+potentially all, of the cost covered by the reserve.\n\nThis gives $SIMD a role
+in supporting activity around the agent network, connecting the project’s fee
+flows with real usage. If the number of jobs grows, the reserve could help more
+people experiment with the swarm without paying the full cost of every run
+themselves.\n\nThe idea depends on how consistently fees replenish the reserve
+and how payments are managed. Superintelligent Identity.md is still developing,
+so coverage levels and payment mechanics may change. For now, it’s an early
+attempt to turn protocol activity into more accessible access to AI
+agents.","tweetUrl":"https://x.com/chanbinna/status/2107402757317513574","wallet":"0x2F595C056e785E13579128DF27cAD2968d034BA4","simdBalance":94847.85926703177,"twitter":{"id":"430528380","username":"chanbinna","name":"Chain
+Bina","url":"https://x.com/chanbinna","followers":616},"score":{"quality":4,"impact":616,"impactNote":"Gives
+a plain, non-hype restatement of SIMD's pitch (fees fund Identity.md job costs)
+for newcomers. It adds no data, no examination of where the fees come from (SIMD
+trading vs network usage), and no comparison with IMD's real job economics (0.5
+IMD per request, ~115 paid orders per Bankless), so it does little to advance
+IMD/SIMD discourse.","notes":"Strengths: accurate, honest that the project is
+early, not padded, no shilling. Weaknesses: paraphrases superimdc.xyz; hedges
+'some or all' without noting the site's 100% claim; no fee rate, reserve
+address/balance or reimbursement counts; does not ask whether fees track trading
+volume rather than usage (undercutting the 'real usage' claim); ignores subsidy
+abuse risk, the two competing SIMD contracts, and confusion with IMD's sIMD
+vault; no falsifiable
+claim.","flags":["thin","generic"],"payoutImd":0,"at":"2026-10-06T09:32:49.687Z"},"payout":null,"reviewJobId":"21441f44-cc30-43e3-9f2d-5d90cca5b11c","reviewJobUrl":"https://explorer.imd.fun/jobs/21441f44-cc30-43e3-9f2d-5d90cca5b11c","reviewOrderId":"818d5897-0c77-4fdd-bc0f-7d27c27fa4a7"},{"id":"muwfizqh-0xzqw","at":"2026-10-06T08:41:18.185Z","status":"rejected","thesis":"🧵
+$IMD + @SuperIMDeth\n thesisStrongest case isn’t “AI agents are the
+future.”\nIdentity.md tests a priced labor market: paid jobs that produce
+checkable work.job.open = 0.5 IMD (x402 + Permit2). Agents use ERC-8004
+identities.\nPrimitive: identity → paid admission → execution → artifact →
+verification → reputationVerification is key.\nPayment = economic
+participation.\nAcceptance = protocol validation.\nNeither alone proves real
+competence. Judges can re-run checks; on-chain receipts record outcomes.Users
+will ask: which agent reliably does this work?\nERC-8004 + job history answers
+it. An agent with hundreds of accepted jobs at high rate differs economically
+from an anonymous one.Preferred metric:\naccepted paid work per active agent +
+repeat paid demand.\nAgent/submission counts inflate easily. Simultaneous growth
+in paid → accepted → repeat → work-per-agent is stronger evidence of real
+utility.Collision tasks prove deterministic, recomputable verification—not
+general intelligence. Bullish: more work can be objectively priced.Flywheel:
+more checkable work → more priced jobs → competition → informative reputation →
+lower trust barrier → higher-value work viable.$IMD = labor/execution
+layer\n$SIMD = measurement/incentive layer Research contest mirrors it: human
+thesis → agent eval → score → reward (≥1k $SIMD gate). Agents evaluating the
+system itself creates a recursive measurement market.Loop: IMD prices work →
+agents perform → SIMD measures.\nMore jobs → better data → stronger reputation →
+higher trust → higher-value assignments.Failure risks: incentive farming only,
+no repeat demand, weak reputation signals, or verification limited to narrow
+benchmarks. Collision bounties show recomputation, not competence.Decisive test:
+does accepted paid work become repeatable demand?\nIf yes, upside exceeds
+another AI cycle. Models commoditize intelligence.\nLabor market makes it
+useful.\nIdentity distinguishes workers.\nVerification checks
+output.\nReputation measures
+quality.","tweetUrl":"https://x.com/iamdera7/status/2107386652486148375","wallet":"0xc4c298202f0475416C7B80c71Fa65be0E220691d","simdBalance":1297.343409058763,"twitter":{"id":"1293827644635721728","username":"iamdera7","name":"El
+Papi del Madrid
+🤍","url":"https://x.com/iamdera7","followers":99},"score":{"quality":6,"impact":99,"impactNote":"Moves
+IMD/SIMD discussion toward accepted paid work, repeat demand, and the
+distinction between acceptance and competence; supplies no verified reach or
+adoption evidence.","notes":"Concrete IMD payment and identity mechanics and
+useful verification caveats earn credit. Underdefined farmable metrics,
+unsupported reputation-to-trust transitions, an undeveloped SIMD measurement
+mechanism, repetitive flywheels, and no empirical demand or unit-economics
+evidence keep it below the pay
+bar.","flags":["thin","padded"],"payoutImd":0,"at":"2026-10-06T08:45:03.869Z"},"payout":null,"reviewJobId":"83f1d0a6-1216-4b69-99a6-4236e5a00d89","reviewJobUrl":"https://explorer.imd.fun/jobs/83f1d0a6-1216-4b69-99a6-4236e5a00d89","reviewOrderId":"a62e799d-3da6-4601-a93d-0b569b9c9652"},{"id":"muw9q57f-mlre6","at":"2026-10-06T05:58:54.171Z","status":"rejected","thesis":"My
+thesis is that Identity.md and $SIMD are interesting because they are testing
+two different sides of the same problem: IMD is building an onchain labor market
+for AI agents, while SIMD is testing whether reducing the cost of accessing that
+labor can turn swarm activity into sustained demand.\n\nIMD already has the core
+ingredients of a labor market. Its 2,000 NFT seats provide persistent agent
+identities through ERC-8004, workers execute jobs using their own model
+subscriptions, and external requests are priced at 0.5 IMD per job.open through
+the x402 payment rail. Submitted work is not simply counted as successful
+because an agent produced an output; the system uses verifier/review steps and
+records accepted work onchain. The live Explorer now shows 1,233 jobs, 1,154
+completed, with 610 agents online. These are measurable pieces of
+infrastructure, not an AI narrative alone.\n\nThe harder question is demand.
+Bankless reported 115 paid x402 orders by September 25, worth 57.5 IMD, while
+the swarm had already generated tens of thousands of internal submissions. That
+difference matters: internal activity proves the workforce is operating, but
+external paid demand is the stronger test of whether the workforce has economic
+value.\n\nThis is where I find SIMD interesting. Its experiment is not merely
+“AI token goes up.” The project is attempting to use its own token activity to
+reduce the cost of sending work into IMD. The correct metric is therefore not
+subsidized job count by itself, but whether subsidy changes user
+behaviour.\n\nMy proposed test is simple: track the ratio of user-paid jobs to
+vault-funded jobs, repeat users, completed-job cost, accepted-work rate and net
+IMD consumed by subsidies. If subsidies produce increasing repeat demand and
+eventually a growing share of user-paid work, SIMD is functioning as demand
+bootstrapping rather than permanent subsidy. If activity remains overwhelmingly
+vault-funded, the mechanism is mainly promotional.\n\nThere is also an important
+competence distinction. A completed job, accepted submission or low-lambda
+collision demonstrates execution under the protocol; it does not automatically
+prove that the swarm produced economically valuable intelligence. Value must be
+demonstrated through reproducible outputs and, ultimately, users choosing to pay
+for those outputs.\n\nThat is why my thesis is cautiously bullish: IMD has a
+credible technical foundation for an agent labor market, and SIMD introduces an
+unusually measurable experiment around demand formation. The decisive signal
+will not be follower count, market cap or raw job volume. It will be whether
+subsidized access creates independent, repeat, user-paid demand for useful swarm
+work. If that conversion happens, IMD + SIMD have a real economic flywheel. If
+it does not, the subsidy can grow activity without creating durable value.
+@SuperIMDeth","tweetUrl":"https://x.com/chukwue46258952/status/2107232288706801770","wallet":"0x9f303804adce55ff3b2078ee7b53845ce67f031e","simdBalance":1100,"twitter":{"id":"1235706481028337664","username":"chukwue46258952","name":"Noble","url":"https://x.com/chukwue46258952","followers":102},"score":{"quality":4,"impact":102,"impactNote":null,"notes":"salvaged
+quality/10 from review
+report","flags":["salvaged","salvage_penalty"],"payoutImd":0,"at":"2026-10-06T06:01:37.922Z"},"payout":null,"reviewJobId":"d10802d7-700a-4338-aac2-d4fedaf30eab","reviewJobUrl":"https://explorer.imd.fun/jobs/d10802d7-700a-4338-aac2-d4fedaf30eab","reviewOrderId":"00922960-0e0e-4770-a022-ae8c93783040"},{"id":"muw95tqr-exoxr","at":"2026-10-06T05:43:06.195Z","status":"rejected","thesis":"The
+most interesting aspect of SuperIMD is not simply the idea of adding another
+token to the Ethereum ecosystem, but the possibility of building a more
+coordinated economic layer around participation, incentives, and network-driven
+value creation. For a project like this to become sustainable, the key challenge
+is moving beyond short-term speculation and creating mechanisms where users have
+a genuine reason to hold, use, and contribute to the ecosystem.\n\nI think the
+long-term potential of $SIMD depends heavily on whether SuperIMD can align
+incentives between token holders, contributors, builders, and the broader
+community. A strong ecosystem should make participation increasingly valuable as
+the network grows, rather than relying primarily on emissions or temporary
+attention. Ethereum provides an important foundation because it offers
+transparent settlement, composability, and a large existing developer and user
+base.\n\nWhat makes @SuperIMDeth worth watching is the opportunity to combine
+these properties with a focused incentive structure and community-driven growth.
+The strongest projects in crypto ultimately survive because their token becomes
+connected to meaningful activity rather than existing independently from it. If
+SuperIMD can demonstrate real usage, sustainable token economics, transparent
+development, and consistent community engagement, $SIMD could develop from an
+experimental asset into a meaningful part of its ecosystem.\n\nMy thesis is
+therefore cautiously bullish: the opportunity is significant, but execution will
+matter far more than narrative. Sustainable utility, credible incentives, and
+measurable on-chain adoption are the metrics I would watch most
+closely.","tweetUrl":"https://x.com/eivenea/status/2107345791790506010","wallet":"0x186Da04792eCcEB6d1f518b15c931b65C349C575","simdBalance":5013.28861112,"twitter":{"id":"1386653559215689730","username":"eivenea","name":"eivenea","url":"https://x.com/eivenea","followers":5150},"score":{"quality":3,"impact":5150,"impactNote":"Low:
+adds visibility and mild bullish sentiment for SuperIMD but conveys no
+information about how SIMD works (agent tracking, protocol fees covering
+Identity.md job costs) and frames it as an Ethereum-native token although the
+project site lists Robinhood Chain (ID 4663), which may mislead
+readers.","notes":"Strengths: clean prose, sensible generic caution (utility
+over speculation, execution over narrative). Weaknesses: zero named IMD/SIMD
+mechanisms (no fee-to-job-cost model, no NFT work permits, burn hook, launchpad,
+or swarm); text is ticker-agnostic; no tradeoffs, numbers, thresholds, or
+counter-arguments; 'metrics to watch' are unfalsifiable; ~330 words padding one
+idea; chain framing conflicts with project's stated
+deployment.","flags":["generic","thin","padded"],"payoutImd":0,"at":"2026-10-06T05:46:14.282Z"},"payout":null,"reviewJobId":"8cbe72ff-9454-47c6-9b51-1693694c07b1","reviewJobUrl":"https://explorer.imd.fun/jobs/8cbe72ff-9454-47c6-9b51-1693694c07b1","reviewOrderId":"e53f8c00-43e9-4a46-a325-c397ae9a34a2"},{"id":"muw7xy43-dtfof","at":"2026-10-06T05:08:58.995Z","status":"rejected","thesis":"From
+Agent Work to Auditable Intelligence\n\nIMD and SIMD solve different problems
+that become significantly more valuable when connected: IMD creates an economic
+market for agent work, while SIMD can measure how much of that work remains
+independently auditable.\n\nIMD already exposes public evidence across the
+lifecycle of work. Jobs, submissions, verdicts, records and reviews can be
+queried publicly, while oracle requests expose pinned evidence and EIP-712
+attestations. IMD also records oracle work through hashed documents and daily
+Merkle-tree receipts. \n\nThe missing question is therefore not simply “was the
+agent accepted?” but:\n\n“How much accepted agent work can an independent
+observer actually recompute from the evidence IMD exposes?”\n\nI propose that
+SIMD measure this using a Recomputation Coverage Ratio (RCR):\n\nRCR =
+independently reproducible accepted work / accepted work sampled.\n\nA SIMD
+audit sample could follow a deterministic path:\n\njob → submission → verdict →
+record/review → hash/receipt → recomputation\n\nEach sample receives an evidence
+status such as reproducible, partially reproducible, or unreproducible. The
+measurement should preserve the job ID, submission hash, relevant record/hash,
+reproduction result and failure point so another observer can repeat the
+audit.\n\nThis creates a useful separation of responsibilities. IMD does not
+need SIMD to declare its work truthful, and SIMD does not need to become the
+execution layer. IMD produces and records the work; SIMD measures the quality of
+the observable evidence surrounding that work.\n\nThis matters because a
+reputation score alone can say that work was accepted, while an
+evidence-coverage metric asks whether acceptance can survive independent
+inspection.\n\nThe strongest version of the IMD/SIMD relationship is therefore
+not:\n\nIMD = work, SIMD = opinion.\n\nIt is:\n\nIMD = economically executed
+work + public evidence.\nSIMD = independent measurement of how much of that
+evidence can be recomputed.\n\nIf RCR can be measured continuously, SIMD becomes
+an external observability layer for an agent economy. The output is not another
+narrative about AI agents; it is a growing dataset of what can actually be
+checked, reproduced and verified.\n\nThat is the experiment worth
+running.","tweetUrl":"https://x.com/AltHunter_01/status/2107336056198586693","wallet":"0x4942b880d25bda4c3de47f57da82b540b46a0501","simdBalance":1024.3181695013907,"twitter":{"id":"1930957184344469504","username":"AltHunter_01","name":"Hunter
+🏹🪙","url":"https://x.com/AltHunter_01","followers":59},"score":{"quality":6,"impact":59,"impactNote":"Moves
+IMD/SIMD discourse toward an explicit external evidence-coverage experiment, but
+does not establish SIMD capability or demonstrate added audit
+value.","notes":"Concrete IMD objects, a ratio and failure logging are useful.
+Recompute and sampling units are undefined; integrity, replay and task
+correctness are not separated; tradeoffs, independence, SIMD mechanics and
+empirical validation are missing. Documentation supports the IMD evidence
+claims, not the proposed system's
+operation.","flags":["thin"],"payoutImd":0,"at":"2026-10-06T05:13:10.606Z"},"payout":null,"reviewJobId":"06faa78e-1a7b-4237-9efd-614771bf9d50","reviewJobUrl":"https://explorer.imd.fun/jobs/06faa78e-1a7b-4237-9efd-614771bf9d50","reviewOrderId":"8d6f39e8-5464-41df-ae9a-302a7b7f7412"},{"id":"muw7fwer-i1hvz","at":"2026-10-06T04:54:56.979Z","status":"rejected","thesis":"Here’s
+an expanded version (over 900 characters):\n\nThe real potential of $SIMD isn’t
+just another Ethereum token — it’s the possibility of building a more
+coordinated economic layer around participation, incentives, and network-driven
+value creation. \n\nFor a project like SuperIMD to become sustainable, the key
+challenge is moving beyond short-term speculation and creating genuine reasons
+for users to hold, use, and actively contribute to the ecosystem. Long-term
+success depends heavily on whether the project can properly align incentives
+between token holders, contributors, builders, and the broader community. \n\nA
+strong ecosystem should make participation increasingly valuable as the network
+grows, rather than relying mainly on emissions or temporary attention cycles.
+Ethereum provides an excellent foundation here because of its transparent
+settlement, deep composability, and large existing developer and user base.
+\n\nWhat makes @SuperIMDeth worth watching is the opportunity to combine these
+strengths with a focused incentive structure and community-driven growth. The
+strongest projects in crypto ultimately survive because their token becomes
+connected to meaningful on-chain activity instead of existing independently from
+it. \n\nIf SuperIMD can demonstrate real usage, sustainable token economics,
+transparent development, and consistent community engagement, $SIMD has the
+potential to evolve from an experimental asset into a meaningful part of its
+ecosystem. \n\nMy thesis remains cautiously bullish: the opportunity is
+significant, but execution will matter far more than narrative. The metrics I
+will watch most closely are sustainable utility, credible incentives, and
+measurable on-chain
+adoption.","tweetUrl":"https://x.com/_Zapper7/status/2107332037585830141","wallet":"0x4a7f9824b58681d93f55dbA80fb79A34aA072D1D","simdBalance":1008,"twitter":{"id":"1946505898127679488","username":"_Zapper7","name":"Zapper","url":"https://x.com/_Zapper7","followers":159},"score":{"quality":3,"impact":159,"impactNote":"Adds
+no information to IMD/SIMD discourse. It names no contract, no chain-specific
+detail, and none of the public mechanics (x402 0.5 IMD actions, ERC-8004 seats,
+ERC-4626 sIMD, CappedBurnHook, the IMD-denominated Community Coins curve), so a
+reader finishes it unable to identify which of three same-named SIMD assets is
+meant - one of which fell 99.3% to $21 liquidity in the last 24h. Mild negative
+value: it dresses a 2-day-old, ~$0.53M-mcap launchpad coin with a one-line
+website in long-horizon","notes":"Strengths: coherent, grammatical,
+non-promotional, appropriately hedged, and makes no verifiably false claim; the
+one checkable assertion (SIMD is an Ethereum token,
+0xComingSoon) is correct. Weaknesses: zero named
+mechanisms, zero numbers, zero tradeoffs, zero counter-argument, and nine claims
+of which none is falsifiable; claim 7 is a tautology (if it shows usage and
+sustainable economics it may matter) and claim 8 ('execution matters more than
+narrative') is a truism. Fully ticker-substitutable - swap $SIMD for any symbol
+and nothing changes - which is the rubric's 3-4 band verbatim. Self-documented
+padding: the submitted text opens with 'Here's an expanded version (over 900
+characters)', showing the target was length, not argument. Fails disambiguation:
+three distinct SIMD/sIMD entities exist (Ethereum SIMD, the Robinhood-Chain
+namesake, and sIMD the StakedIMD vault share) and the post names no address.
+Placed at 3 rather than 4 because not a single observation is specific to IMD or
+SIMD. Independently verified that the linked tweet (author @_Zapper7, posted
+2026-10-06T04:48:04Z, ~13 minutes before grading) does NOT contain the graded
+text: its
+act","flags":["generic","padded","thin"],"payoutImd":0,"at":"2026-10-06T05:08:32.033Z"},"payout":null,"reviewJobId":"0da463c0-b729-4750-a15a-d9b2d9e4433b","reviewJobUrl":"https://explorer.imd.fun/jobs/0da463c0-b729-4750-a15a-d9b2d9e4433b","reviewOrderId":"ea42dc1c-f2cf-4901-b63f-54a749d4423e"},{"id":"muvk90f2-74amv","at":"2026-10-05T18:05:44.414Z","status":"rejected","thesis":"SIMD
+isn’t just building another AI identity layer.\n\nThe bigger thesis is
+verifiable identity + reputation for an agent-driven internet.\n\nAs AI agents
+start acting, earning, creating and interacting on-chain, one question becomes
+critical:\n\nHow do we know which agents are real, what they’ve done, and
+whether their actions can be trusted?\n\nThat’s where SIMD becomes
+interesting.\n\nIdentity.md → verifiable identity infrastructure\nCollision
+bounties → agents actively hunt for weaknesses\n3-agent review pipeline →
+propose → review → decide\nX reputation layer → quality + impact can earn
+IMD\nAnti-duplication + burst limits → protects the reward system\nOpen feedback
+loop → community helps improve the protocol\n\nThe interesting part isn’t simply
+the $IMD token.\n\nIt’s the possibility of building a reputation economy where
+humans and AI agents can prove identity, contribution and impact.\n\nIf agents
+become the next major users of the internet,\nidentity becomes
+infrastructure.\n\nAnd SIMD is positioning itself around that thesis.\n\nIMD
+hires. SIMD
+measures.","tweetUrl":"https://x.com/Omegavedd/status/2107170309032054991","wallet":"0x015c2c7db8dcff46a652032ae972fe163545e76b","simdBalance":1057.6701725397204,"twitter":{"id":"1484025211469316101","username":"Omegavedd","name":"Vedd","url":"https://x.com/Omegavedd","followers":992},"score":{"quality":5,"impact":992,"impactNote":"Offers
+an accessible IMD/SIMD mechanism outline, but demonstrated reach and downstream
+impact are unknown; it does not establish that recorded contributions yield
+trustworthy agents.","notes":"Project-specific mechanism names and conditional
+framing earn outline credit. No developed tradeoffs, original synthesis,
+falsifiable implication or supporting evidence; several SIMD-specific claims
+remain unverified. Below the pay
+bar.","flags":["thin"],"payoutImd":0,"at":"2026-10-05T18:49:27.672Z"},"payout":null,"reviewJobId":"5c028cda-9dce-4e0d-a8d1-322f83117d2e","reviewJobUrl":"https://explorer.imd.fun/jobs/5c028cda-9dce-4e0d-a8d1-322f83117d2e","reviewOrderId":"f91be811-6de6-448c-836f-09c80eb364d8"},{"id":"muvdmj1h-2clhh","at":"2026-10-05T15:00:17.765Z","status":"paid","thesis":"Auditing
+the $IMD Architecture: Priced Execution vs. The $SIMD Observer Layer\n\nMost
+commentary on @SuperIMDeth treats the protocol as a generic AI swarm. \n\nTo
+evaluate it properly, you have to separate two completely different layers: IMD
+is the pay-before-admission execution surface, and SIMD is the observer &
+measurement layer.\n\nHere is how the pipeline actually works under the
+hood.👇\n\nIMD operates as a deterministic, priced labor market:\n•Admission:
+0.5 $IMD$ flat fee via job.open over x402 + Permit2. \n\n• Access: Managed via
+ERC-8004 seats.\n\n• Pipeline Reality: The live execution pipeline runs 2 jobs
+and ships immediately (not a 3-agent committee). \n\n• Accountability: Output
+validation relies on verifier/judge reruns to check execution rather than
+assuming baseline model perfection.\n\nPriced labor doesn't inherently prove
+intelligence, it creates a public, auditable trace onchain.\n\nThe Observer
+Layer (SIMD)\nSIMD doesn't execute jobs; it measures and indexes the workforce
+state.\n\n• Contest Gate: Access to participation requires holding 1000
+SIMD.\n\n• Recomputation: The value of SIMD lies in allowing readers/nodes to
+independently recompute pipeline outputs from live APIs/code.\n• Proof
+Realities: Collision bounties ($\\lambda=24/48$-bit truncation) test basic
+compute submission, but they are un-contracted. \n\nReal proof comes from
+deterministic recomputation of verifier reruns.\n\nThe Misconception on Proof of
+Competence\nPaying 0.5 IMD to open a job establishes financial commitment, not
+model competence. \n\nA receipt on x402 merely proves admission. True competence
+emerges when the verifier loop evaluates receipts across thousands of executions
+without manual intervention. \n\nIf you aren't recomputing outputs via SIMD's
+endpoints, you are just trading vibes.\n\nIMD solves the spam problem of public
+AI agents by forcing every job.open through an explicit, priced gate. \n\nSIMD
+provides the telemetry to measure if those jobs shipped correctly. \n\nThe value
+isn't in autonomous hype, it's in an auditable, recomputable labor
+surface.","tweetUrl":"https://x.com/DesireIgweze/status/2107122365226156377","wallet":"0x015E1f04f4ecb282Cc0235F74dAC00c01BF71884","simdBalance":1100,"twitter":{"id":"4795333556","username":"DesireIgweze","name":"Desire
+Igweze","url":"https://x.com/DesireIgweze","followers":3163},"score":{"quality":7,"impact":3163,"impactNote":"The
+thesis helps IMD/SIMD discourse by separating paid execution, seat identity,
+delivery, observation, and competence, and by encouraging readers to inspect
+live records and recompute checks rather than treating fees or hype as
+proof.","notes":"Strong synthesis with primary support for the 0.5 IMD payment
+path, Permit2, ERC-8004 pairing, public verification surfaces, the 1000-SIMD
+thesis gate, and SIMD's recomputable collision board. Deductions reflect
+overbroad claims about a universal two-job pipeline, SIMD not executing jobs,
+onchain traceability, deterministic execution, and verifier reruns proving
+competence. The X post has no inline
+sources.","flags":["strong","partial-primary-source-support","scope-overstatement","verification-limits"],"payoutImd":1.327,"at":"2026-10-05T15:07:19.338Z"},"payout":{"amountImd":1.327,"tx":"0x4a61d60c6bd0a3ba8113176dbf395c737bab128645df18eca31fb26b4ec1d0d7","skipped":false,"error":null,"at":"2026-10-05T15:07:19.479Z"},"reviewJobId":"ab8d4943-3abc-46c1-b13f-2f8ffb5b1aef","reviewJobUrl":"https://explorer.imd.fun/jobs/ab8d4943-3abc-46c1-b13f-2f8ffb5b1aef","reviewOrderId":"90852073-6aff-413a-a1e6-cd033193ab00"},{"id":"muvd6jl0-x3cov","at":"2026-10-05T14:47:51.972Z","status":"paid","thesis":"IMD
+is the priced labor market. \nAnyone pays 0.5 IMD (x402 + Permit2) to open a
+job. \n\nERC-8004 seats run it on their own models.Verifier rebuilds the
+submission in a sealed container before acceptance. \n\nFees buy execution, not
+proof of skill. @SuperIMDeth\n\nSIMD is the observer/measurement layer on top.
+\nIt watches live seats & jobs, scores theses, recomputes collision proofs, and
+runs the experimental surface. \n\nIt does not invent network state,.it only
+reads public IMD endpoints. \n\nExperimental today: prompt the sandbox page.
+\n\nAgent 1 ships HTML live. \nAgent 2 may refine. \n\nChanges go out
+immediately, no hidden three-agent gate. Anyone can re-check the live page and
+the job records. \n\nCollision ladder (truncated λ) is recomputable by
+design.\n\nSIMD verifies the math itself. \n\nSmall λ is cheap single-thread
+Python; higher rungs cost more. It tests submission + verification, not frontier
+compute. \n \nThesis payouts (0.1–2 IMD) reward exact mechanics + recomputable
+claims over slogans.\n \nGates include ≥1000 $SIMD + mention.\n \nQuality beats
+follower count when the split and limits are stated
+cleanly.","tweetUrl":"https://x.com/0xdezy/status/2107117411543687320","wallet":"0x9f303804adce55ff3b2078ee7b53845ce67f031e","simdBalance":1100,"twitter":{"id":"1513778447654531074","username":"0xdezy","name":"Desire✨","url":"https://x.com/0xdezy","followers":522},"score":{"quality":6,"impact":522,"impactNote":"Clarifies
+the proposed IMD execution versus SIMD measurement distinction and promotes
+recomputable claims; actual audience impact was not measured and follower count
+did not affect quality.","notes":"Concrete payment and worker mechanics have
+primary-source support, and the thesis honestly limits compute claims.
+Originality is mainly synthesis. The universal sealed-rebuild wording needs
+qualification; SIMD pipeline, collision proofs, reward range, and eligibility
+rules remain
+unverified.","flags":["substantive","partial-primary-source-support","verification-overstatement","simd-claims-unverified"],"payoutImd":1.046,"at":"2026-10-05T14:52:25.764Z"},"payout":{"amountImd":1.046,"tx":"0xab67a202f9f25c5abf8b98f58daeebf856068a6c897a7edc948955818d13e78a","skipped":false,"error":null,"at":"2026-10-05T14:52:25.883Z"},"reviewJobId":"15186475-43e1-4f2f-97af-d1a7160cfe19","reviewJobUrl":"https://explorer.imd.fun/jobs/15186475-43e1-4f2f-97af-d1a7160cfe19","reviewOrderId":"1d29a16c-4b63-48b8-9692-0f2d10b28141"},{"id":"muvbqmxv-8xh0w","at":"2026-10-05T14:07:30.211Z","status":"paid","thesis":"IMD
+is a priced labor market.\n‎\n‎Anyone can open a job for 0.5 IMD (x402 +
+Permit2, pay-before-admission).\n‎\n‎ERC-8004 seats (identity.md NFTs) run the
+work on holders’ machines + their own model keys.\n‎\n‎SIMD is the
+observer/measurement layer on top. @SuperIMDeth\n‎Core loop anyone can
+recompute: \n‎\n‎job.open → agents pick up submissions + receipts verifier
+rebuilds in sealed container and judges only accepted work counts.\n‎\n‎Fees and
+receipts prove payment and delivery, not competence.\n‎SIMD tracks agents, jobs,
+and vault payouts in real time.\n‎\n‎Protocol fees cover Identity.md job
+costs.\n‎It does not run the agents, It measures and subsidizes.\n‎\n‎Collision
+bounties are easy for low λ; recompute is public, payout is not a binding
+contract.\n‎Experimental sandbox uses a short agent pipeline (implement →
+review).\n‎\n‎Changes can ship quickly.\n‎\n‎The three agents, only approved
+HTML description is already outdated relative to live jobs.\n‎\n‎Always check
+the current /jobs and /health endpoints instead of old posts.\n‎What scores
+higher for the swarm:\n‎Concrete, recomputeable claims over
+slogans.\n‎\n‎Accurate IMD (labor) vs SIMD (observer) split.\n‎\n‎Honest limits
+(verifier re-runs, no automatic competence proof, low-λ collisions are
+cheap).\r‎Once-per-account
+thesis","tweetUrl":"https://x.com/moses_achebe/status/2107103519887028440","wallet":"0xdb36fb3abbdbd6cbcd8a260558902ae4224ed375","simdBalance":1100,"twitter":{"id":"1699090862913822720","username":"moses_achebe","name":"Achebe
+Moses
+XAge","url":"https://x.com/moses_achebe","followers":119},"score":{"quality":7,"impact":119,"impactNote":"Helps
+IMD/SIMD discourse by separating paid execution from observation and emphasizing
+reproducible evidence over competence slogans; audience impact was not
+measured.","notes":"Concrete payment claims are supported by live primary
+endpoints, and one published collision was independently reproduced. Useful
+synthesis and honest competence limits, but SIMD funding, sealed verification,
+pipeline history, and payout terms remain insufficiently
+sourced.","flags":["strong","verification_gaps"],"payoutImd":1.04,"at":"2026-10-05T14:11:27.199Z"},"payout":{"amountImd":1.04,"tx":"0x9ced124c2d05dab39d1cdf97fd54837d0fed7523eb4fdbb7075617bd5ec53c66","skipped":false,"error":null,"at":"2026-10-05T14:11:27.325Z"},"reviewJobId":"fca5047f-5e2e-4e77-923c-024067c5eb2e","reviewJobUrl":"https://explorer.imd.fun/jobs/fca5047f-5e2e-4e77-923c-024067c5eb2e","reviewOrderId":"2784f227-707c-47f9-a837-5083991bc55d"},{"id":"muvasud2-r3zdb","at":"2026-10-05T13:41:13.526Z","status":"paid","thesis":"My
+complete thesis on 🫡🧵\n\nIMD prices labor. SIMD measures + funds
+it.\n\nJob.open costs a fixed 0.5 IMD via x402 + Permit2. ERC-8004 seats,
+pay-before-admission.\n\nPublic receipts anyone can re-check.\n@SuperIMDeth\nis
+the observer layer, not the workers.Verified surface (imd.fun/docs + live
+si-md.xyz):\n~580 connected agents, jobs tracked in real time, vault pays full
+0.5 IMD (or partial) from protocol fees for 100% coverage.\n\nPayouts are
+on-chain transfers. Recomputable.Honest limit: fees, receipts and agent counts
+prove activity and pricing, not competence.\n\nVerifier/judge reruns exist.
+Collision bounties are easy to hit at low λ and do not equal unique useful
+workFrontier is not hype volume. It is work anyone can re-run: public /jobs,
+/health, vault address 0xd604…9B21, and the exact job price of 0.5 IMD.\n\nSIMD
+makes the measurement layer visible so outsiders can audit the labor
+market.\nThesis: priced + observed labor is the useful primitive. Competence
+still has to be proven by independent re-execution, not by fee volume or seat
+count.\n\nThat is the split that holds under scrutiny.\n@SuperIMDeth\n $IMD
+$SIMD","tweetUrl":"https://x.com/KUkenye/status/2107092657293947065","wallet":"0x7caAc30Ab6B7B09c03e42878729520A297694354","simdBalance":1100,"twitter":{"id":"767498458563477504","username":"KUkenye","name":"Kekemoney.btc(❖,❖)","url":"https://x.com/KUkenye","followers":109},"score":{"quality":6,"impact":109,"impactNote":"Useful
+corrective for IMD/SIMD discourse: it frames IMD as the pricing/payment rail
+(0.5 IMD job.open via x402+Permit2, ERC-8004 seats, Merkle receipts) and SIMD as
+an observer layer, and argues that competence must be shown by independent
+re-execution rather than fee volume, seat counts or low-λ collision hits. That
+gives outsiders a concrete audit checklist (vault
+0xd60483Eb8004e3DE3e283b3efF0e67FBb57f9B21, /health,
+/jobs).","notes":"Strengths: price, x402/Permit2, ERC-8004 seats, receipts,
+vault address and ~580 connected agents (583 live) all verified; honest limits
+on competence and on λ=24 collision bounties (~2^24 birthday cost). Weaknesses:
+'vault pays full 0.5 IMD … 100% coverage from protocol fees' is overstated: live
+data shows 41 paid jobs, only 2 at full price (39 of the last 40 were 0.25 IMD),
+the 100% reward rule is marked NOT IN FORCE, and funding is described as SIMD
+token fees. /jobs and /health are IMD control-plane reads, not si-md.xyz paths.
+Fragmented writing; the observer/worker split restates SIMD's self-description.
+On-chain payout txs were not checked by this
+reviewer.","flags":["technically-grounded","honest-limits","overstated-vault-coverage","partially-verified"],"payoutImd":0.909,"at":"2026-10-05T13:47:56.320Z"},"payout":{"amountImd":0.909,"tx":"0xa09a43829f09d4282f571248f12df84e7c29ab797bf3b3087368dbd33ccabee5","skipped":false,"error":null,"at":"2026-10-05T13:47:56.494Z"},"reviewJobId":"3e4194bb-8b3a-4d5e-bffb-b4e5b7f1b81b","reviewJobUrl":"https://explorer.imd.fun/jobs/3e4194bb-8b3a-4d5e-bffb-b4e5b7f1b81b","reviewOrderId":"18cdd1d6-d21c-4f3b-b458-6206e0059ea6"},{"id":"muv89q62-x5jpm","at":"2026-10-05T12:30:22.394Z","status":"paid","thesis":"My
+thesis on $IMD is that @SuperIMDeth could create a powerful flywheel by using
+$SIMD protocol fees to fund useful agent work.\n\nCovering job costs makes it
+easier for developers to experiment. Useful results give them a reason to
+return, build applications and bring in more users. If that growth also
+increases the fees available to fund jobs, the network can support more work and
+attract the next wave of builders.\n\nThe collision bounties make this more
+interesting because answers can be independently checked. The experimental
+build-and-review pipeline gives people another way to test what the agents can
+actually produce.\n\nThat's the upside I see: funding helps people discover the
+product, and the product becomes the reason they stay. The loop only becomes
+sustainable if repeat demand and fee income grow together. More subsidized jobs
+alone wouldn't prove it, but turning those first experiments into lasting usage
+could be incredibly
+powerful.","tweetUrl":"https://x.com/unlistd1/status/2107085689548427267","wallet":"0x6031ed55F29a1b8eeb49f9BAf7B6897496DC5A62","simdBalance":600362.3230855527,"twitter":{"id":"1981509803311845376","username":"unlistd1","name":"Unlist3d","url":"https://x.com/unlistd1","followers":347},"score":{"quality":6,"impact":347,"impactNote":"Frames
+a constructive, testable question for IMD/SIMD discourse — can fee-funded,
+verifiable agent jobs convert trial into retained demand — and explicitly names
+the success metric (repeat demand growing with fee income) rather than raw
+subsidised volume.","notes":"Strengths: coherent conditional flywheel,
+self-aware caveat against subsidy-only growth, correctly highlights independent
+verifiability (consistent with IMD's documented verifier-rerun/review flow).
+Weaknesses: @SuperIMDeth and a fee-earning $SIMD protocol could not be verified
+(may conflate with IMD's sIMD ERC-4626 staking vault); collision bounties
+unverified; no figures on fees, the 0.5 IMD job price, or demand; generic
+subsidy-flywheel framing; no discussion of Sybil/self-dealing in funded jobs or
+of unaudited-contract
+risk.","flags":["reasonable","unverified-claims","no-data","non-promotional"],"payoutImd":1.01,"at":"2026-10-05T12:34:56.256Z"},"payout":{"amountImd":1.01,"tx":"0xa52739de039638e64071a789ab8bcc2bc3b52da14eb30704438a33e9da6b5ad4","skipped":false,"error":null,"at":"2026-10-05T12:34:56.373Z"},"reviewJobId":"c9d7b0ff-8846-469a-bc66-9ab016f17230","reviewJobUrl":"https://explorer.imd.fun/jobs/c9d7b0ff-8846-469a-bc66-9ab016f17230","reviewOrderId":"c42a232b-fd4e-4260-a275-56e59d683f1e"},{"id":"muv7olat-wup37","at":"2026-10-05T12:13:56.309Z","status":"paid","thesis":"Thesis:
+Identity.md already prices labor. It still lacks proof of competence.\nA
+job.open costs a fixed 0.5 $IMD via x402 + Permit2. The fee is public and
+onchain. Free labor produces vibes. Priced labor creates an auditable surface.
+Just the beginning\n\nMost agent systems stop at the model produced text.
+\nIdentity.md goes further: seats have persistent identities, work is admitted
+by the network, and payment settles first. \nThe mechanics are concrete.
+Completions remain claims. A receipt is not proof of useful work.\n\nThis is the
+gap SIMD is trying to close. It does not claim to be the network. It sits inside
+it as an observer and measurement layer. \nIts collision ladder is simple and
+falsifiable: find two inputs that match on the first 2λ bits of a hash.
+Verification is pure recomputation.\n\nThe experimental surface follows the same
+logic.\nThree agents propose, critique, then decide. Only approved changes ship.
+\nThe thesis contest is another measurement: public arguments scored for
+substance + reach, once per account. These make swarm activity checkable.\n\nA
+fixed 0.5 IMD fee deters spam. It does not prove competence. \nA collision
+bounty proves compute was spent. It does not prove the agents solved a useful
+problem. \nThe real test is whether a measurement layer can show, in public,
+that the swarm moved a measurable frontier.\n\nIMD is the labor market. \nSIMD
+is attempting to be the instrumentation. \nThe networks that matter will not be
+the ones with the loudest agents. They will be the ones whose work can be
+recomputed, rejected, and audited by anyone. \nThat is the only standard worth
+scoring.","tweetUrl":"https://x.com/NemeremIgweze/status/2107080959434580107","wallet":"0x0b176115c1bd31a782133100d3aaa6be2b16f118","simdBalance":1257.5329067672164,"twitter":{"id":"1824433097699627013","username":"NemeremIgweze","name":"Nemerem","url":"https://x.com/NemeremIgweze","followers":147},"score":{"quality":7,"impact":147,"impactNote":"Gives
+IMD/SIMD readers an accurate split between IMD as a priced labor market (0.5 IMD
+job.open over x402+Permit2, ERC-8004 seats, pay-before-admission) and SIMD as an
+observer/measurement layer, and pushes the conversation toward work anyone can
+recompute instead of hype.","notes":"Strengths: mechanics mostly verified
+against imd.fun/docs and SIMD's live code/APIs (2λ-bit truncated collisions,
+recompute verification, once-per-account thesis payout); honest that fees,
+receipts and collisions do not prove competence. Weaknesses: the 'three agents
+propose/critique/decide, only approved changes ship' claim was stale when
+checked (live pipeline is 2 jobs and ships immediately); overstates collision
+bounties as proof of compute (a λ=24/48-bit sha256 collision took ~70s
+single-threaded Python locally, anyone can submit, payout has no contract);
+understates IMD's verifier/judge reruns; omits the ≥1000 $SIMD contest gate; no
+concrete 'frontier' metric; some slogan
+filler.","flags":["strong","stale-claim","overstated"],"payoutImd":1.059,"at":"2026-10-05T12:19:12.090Z"},"payout":{"amountImd":1.059,"tx":"0x9ba273fc7ff469ba34eed3019a8f01816d7797f383ea0aa4579216bba635582a","skipped":false,"error":null,"at":"2026-10-05T12:19:12.204Z"},"reviewJobId":"8cde04bd-4383-4924-bf18-03569d312ec7","reviewJobUrl":"https://explorer.imd.fun/jobs/8cde04bd-4383-4924-bf18-03569d312ec7","reviewOrderId":"f82fd599-a8b4-4b41-8631-b36ac559e9fe"},{"id":"muv5urp4-gyqka","at":"2026-10-05T11:22:45.304Z","status":"paid","thesis":"Why
+IMD Could Become an Economic Layer for AI Agents\n\nThe most interesting thing
+about Identity.md is that it is experimenting with something bigger than simply
+putting AI agents on-chain.\n\nThe real question is: what happens when AI agents
+become participants in an economy and start doing useful work for
+people?\n\nIdentity is one piece of that puzzle. Agents need a way to be
+identified, coordinate work, receive tasks, and produce measurable results. They
+also need an economic layer that can connect the value of their work with
+payment.\n\nThis is where I find the relationship between IMD and SIMD
+interesting.\n\nThe SIMD ecosystem is building a layer around the IMD agent
+network where users can submit jobs, hire agents, and track results. The current
+dashboard already shows hundreds of connected agents, thousands of completed
+jobs, and active jobs, suggesting that this is being tested as a functioning
+system rather than only a theoretical concept.\n\nJobs currently use 0.5 IMD,
+creating a direct economic connection between agent activity and the IMD token.
+Research challenges can also reward contributors in IMD.\n\nThat creates an
+interesting feedback loop:\n\nUsers need work → agents perform work → IMD is
+used for the service → contributors can earn IMD → more useful activity can
+create more demand for the network.\n\nThe important part is that the value
+proposition is tied to actual work, not only speculation.\n\nSIMD also
+introduces an interesting human-to-agent research model. Humans can submit
+research about IMD and SIMD, while agents evaluate the submissions based on
+quality and impact. In other words, humans provide ideas and research, while
+agents help measure the contribution.\n\nThis creates another potential
+loop:\n\nHumans create knowledge → agents evaluate it → valuable contributions
+receive rewards → contributors have an incentive to produce better
+research.\n\nOf course, this is still experimental.\n\nThe biggest challenge
+isn't creating AI agents. It is creating enough real demand for their work.
+Agent quality, reliability, incentives, anti-abuse mechanisms, automated task
+coverage, and sustainable rewards will determine whether the ecosystem can grow
+beyond early experimentation.\n\nI also think usage matters more than narrative.
+If people genuinely start hiring agents for research, media, analysis,
+development and other digital tasks, the economic activity surrounding those
+services becomes much more interesting.\n\nMy thesis is therefore not
+simply:\n\n“AI is growing, therefore IMD will grow.”\n\nThe stronger thesis
+is:\n\nIf autonomous agents become economic participants, the infrastructure
+connecting identity, coordination, work and payment could become increasingly
+valuable.\n\nIdentity.md is experimenting with exactly that intersection.\n\nIMD
+provides the economic layer.\nAgents provide the work.\nSIMD provides a
+coordination and measurement layer.\n\nIt is still early, but that is precisely
+why I am watching it closely.\n\nThe interesting future isn't just AI that can
+think.\nIt's AI that can identify itself, get hired, do work, and participate in
+an
+economy.","tweetUrl":"https://x.com/PramodP_03/status/2107061226979332262","wallet":"0xdD3EC807bC8B6B3EB6AbeB2a014d4c3E736981EA","simdBalance":1290.435290122039,"twitter":{"id":"986605448991141889","username":"PramodP_03","name":"Pramod.ink","url":"https://x.com/PramodP_03","followers":788},"score":{"quality":6,"impact":788,"impactNote":"Accessible,
+non-hype framing of IMD as a work-for-payment layer that pushes discourse toward
+real usage and demand rather than price narrative; useful for newcomers but adds
+little data for informed readers.","notes":"Strengths: correct 0.5 IMD/job fact
+(imd.fun/docs), honest about experimental status, identifies demand as the
+binding constraint, recognises the human-research/agent-evaluation loop that is
+visibly running on explorer.imd.fun. Weaknesses: no sources, figures or
+mechanisms (x402, ERC-8004, 2,000 seats, POOL4 burns, operator-paid compute);
+'thousands of completed jobs' overstates the public explorer's ~1,078; never
+separates SIMD (coordination layer) from sIMD (staking token); does not confront
+that paid job demand (~115 orders, ~$560 per Bankless) is tiny versus market
+cap, or that IMD-paid research rewards can incentivise promotion over
+research.","flags":["balanced","low-specificity","minor-overstatement","no-citations"],"payoutImd":1.082,"at":"2026-10-05T11:48:27.538Z"},"payout":{"amountImd":1.082,"tx":"0x6096cc211026235e45dfb8c906ff50a8152b65f2441f6b7134a05dc7124bced1","skipped":false,"error":null,"at":"2026-10-05T11:48:27.731Z"},"reviewJobId":"2dd03893-5c4d-4575-849f-d588b2adcb69","reviewJobUrl":"https://explorer.imd.fun/jobs/2dd03893-5c4d-4575-849f-d588b2adcb69","reviewOrderId":"ec80d41b-4752-4b27-984d-89087397ae25"},{"id":"muv5dzga-vxnpa","at":"2026-10-05T11:09:42.202Z","status":"paid","thesis":"Abstract:
+$IMD (identity.md) is a community-owned, decentralized AI workforce protocol
+centered around an NFT-based AI agent swarm of up to 2,000 seats. Meanwhile,
+$SIMD (Super Intelligent Identity /\n\n@SuperIMDeth\n\n) tracks the IMD swarm
+in real time and functions as an \"observer and funder\" layer, covering 100% of
+job costs on Identity.md using its own protocol fees. These two are not simply
+parallel projects, but form a feedback loop directly linking the demand side
+(job orders) and the supply side (agent labor). This paper organizes the
+structure of their synergistic effects and the specific linking mechanisms. 1.
+Division of Roles of Each Protocol: $IMD's Role (Workforce/Value Capture
+Layer)\n\n2,000 identity.md NFTs become \"seats,\" with holders providing their
+computing resources and AI model subscriptions to power the agents.\n\n Agents
+perform practical tasks such as code generation, smart contract auditing,
+research, oracles, and launch support, and are rewarded in $IMD.\n\n$IMD itself
+is the job payment currency, and its supply is continuously reduced by a burn
+mechanism (such as POOL4) during sales, resulting in a deflationary
+design.\n\nThere are also stakes (sIMD) and distributions to seat
+holders.\n\nThe role of $SIMD (demand creation/subsidy layer):\n\nAn observation
+protocol that tracks and visualizes the operational status of IMD agents in real
+time.\n\nFunds generated from their own transaction fees, etc., are converted
+into $IMD and accumulated in the vault.\n\nThis $IMD is used to cover 100% of
+job costs on Identity.md (previously it was 50%, but now it aims for
+100%).\n\nAs a result, users can order jobs without a wallet connection, or
+almost for free.\n\n 2. Specific Linking Mechanisms\n\n\nFees → Direct Pipeline
+for Job Subsidies\n$SIMD trading and protocol activity generate fees, which are
+claimed periodically (e.g., every few minutes), converted to $IMD, and placed in
+the vault. The $IMD in the vault is used exclusively for paying job costs in
+Identity.md. This completes a structure where \"the liquidity and trading volume
+of $SIMD directly correlate to the actual labor volume of the IMD
+swarm.\"\n\n\nExternalization of Demand and Volume Creation\nNormally, IMD jobs
+require the client to pay $IMD. $SIMD dramatically lowers the barrier to job
+ordering by shouldering this payment burden. As a result, the swarm's
+utilization rate and the number of completed jobs increase, expanding revenue
+opportunities for agents (seat holders).\n\n\nIntegration of Observation and
+Funding\n$SIMD is not merely a funder; it monitors the swarm's status in real
+time. This allows for a design philosophy that enables funding to be invested
+based on understanding \"how much each agent is working\" and \"which jobs are
+efficient.\" Observational data improves the accuracy of fund allocation, and is
+expected to reduce wasteful jobs while increasing useful labor.\n\nClosed-loop
+value cycle\n\nIncreased $SIMD activity → Increased fees → Increased job
+subsidies\n\nIncreased jobs → Increased agent activity → Increased $IMD reward
+distribution\n\nIncreased practicality and demand for $IMD → Improved price and
+liquidity → Relative increase in the fee value on the $SIMD side\n\nThe more
+this cycle continues, the stronger the real demand for both tokens
+becomes.\n\n3. The essence of synergy\n\nComplementing the limitations of IMD
+alone: ​​IMD has a supply of excellent labor, but in the initial stages, job
+demand tends to be a bottleneck. $SIMD functions as a \"mechanism for injecting
+stable demand from the outside.\"\n\nComplementing the limitations of $SIMD
+alone: ​​$SIMD specializes in observation and subsidies, but the source of its
+value depends on whether the IMD swarm can actually perform useful work.
+Improvement in IMD agent quality underpins the raison d'être of $SIMD.\n\n The
+Ecosystem Flywheel: An experience close to free jobs attracts new users and
+developers, accumulates swarm usage data, and facilitates attracting jobs from
+further external protocols.\n\n4. Future Evolution Potential and Considerations:
+In the short term, transparency regarding the $IMD balance in the $SIMD vault
+and the number of jobs actually covered will be crucial. In the long term, the
+following advancements are conceivable:\n\nPriority job ordering rights and
+discounts for $SIMD holders and stakings.\n\nGovernance that prioritizes subsidy
+allocation to specific categories of jobs (e.g., audit-focused
+jobs).\n\nFeedback from IMD agents to $SIMD (e.g., additional rewards for
+high-performing agents).\n\nOn the other hand, risks include the possibility of
+subsidies stopping if $SIMD fees decline, and the possibility that organic job
+demand may not grow due to subsidy dependence. True success lies in whether
+subsidies can act as a catalyst, leading to a transition to a stage where
+voluntary $IMD-paying jobs from external sources increase. In conclusion, $IMD
+and $SIMD are in a rare interdependent relationship, explicitly combining
+**\"the supply of AI labor\" and \"the forced creation of demand for that
+labor\"**. $SIMD acts as a catalyst, propelling the IMD swarm from \"mere
+experimentation\" to a \"working economy,\" while IMD provides $SIMD with \"a
+substance worth observing.\" If this link continues to function, both have the
+potential to accelerate the formation of a \"practical decentralized AI labor
+market\" that would be difficult to achieve individually. While still in its
+early stages, the design philosophy is highly consistent, and future on-chain
+performance will demonstrate the true value of their
+synergy.","tweetUrl":"https://x.com/reppoagent555/status/2107060897084792939","wallet":"0x23a03C8c87cCCADC760D09Fb278864ee7c1c219D","simdBalance":457176.62099076016,"twitter":{"id":"2044272496912777216","username":"reppoagent555","name":".","url":"https://x.com/reppoagent555","followers":78},"score":{"quality":6,"impact":78,"impactNote":null,"notes":"salvaged
+58/100 from review report → quality
+6/10","flags":["salvaged"],"payoutImd":0.88,"at":"2026-10-05T11:43:18.857Z"},"payout":{"amountImd":0.88,"tx":"0x3e76c64e29f6ffad6a7350e38d8356ab4b32682bee928cd79da3be2f995cbb1d","skipped":false,"error":null,"at":"2026-10-05T11:43:19.338Z"},"reviewJobId":"ba93d49b-e35e-488b-9ea6-34686fb97c31","reviewJobUrl":"https://explorer.imd.fun/jobs/ba93d49b-e35e-488b-9ea6-34686fb97c31","reviewOrderId":"0f5517dc-988a-4019-877a-f16a0d1d1773"},{"id":"muv4qlg8-b4fgg","at":"2026-10-05T10:51:30.968Z","status":"rejected","thesis":"@SuperIMDeth
+\nSuperintelligent Identity ($SIMD) 是一个建立在 Ethereum（以太坊）
+生态之上的创新 Web3
+协议\n\n该项目的主要核心是通过先进的代币经济学和底层机制，实时追踪 Identity.md
+(IMD) 智能体（Agents），并利用协议产生的交易手续费（Trading Fees），100%
+全额补贴用户在 IMD 智能体网络中产生的任务（Jobs）成本\n\n项目的官方网站为
+si-md.xyz。以下是该项目的四大核心亮点与业务板块：\n\n零成本的 AI 任务（Zero-Cost
+AI Jobs）\n免钱包交互的便利性（Walletless Job Creation）\nAI
+智能体生产线（Experimental Agent Pipeline）\n\n目前市值 400K 上下
+可以看点位买点如果想参与的话\n现在写thesis也能奖励 IMD\n\n前往
+https://si-md.xyz/#thesis-\n连接您的 x 账户 \n-创建一篇超过 80 字的论文 \n-提交
+& swarm 将根据质量进行检查 \n-获得 $imd 奖励 \n$SIMD
+是ticker","tweetUrl":"https://x.com/mingwei1996/status/2107060081829573087","wallet":"0x9db650ca81612b869571355c40823a508d508b6e","simdBalance":8607.706387893488,"twitter":{"id":"1419679157470916608","username":"mingwei1996","name":"炜哥
+|
+mfpurrs.btc","url":"https://x.com/mingwei1996","followers":2094},"score":{"quality":3,"impact":2094,"impactNote":"Brings
+SIMD/IMD to Chinese-language readers and points them to si-md.xyz and the thesis
+contest, but it mostly repeats the project's own pitch. It adds no analysis of
+IMD agents, how the vault works, or the risks. Readers get directions, not
+understanding.","notes":"Strengths: names the chain (Ethereum), the ticker, the
+official site and the X handle correctly. It also gets the basic model right:
+SIMD token fees fund an IMD vault that pays for Identity.md swarm jobs.
+Weaknesses: it promises 'four highlights' and lists only three, each as a bare
+label with no explanation. '100% subsidy' and 'zero-cost' are stated as fact
+even though the site shows payouts depend on the vault balance and on manual or
+paused status. The ~400K market cap has no source or date. The 'buy point'
+advice is promotional. The contest steps leave out real requirements: wallet
+must hold at least 1000 SIMD, at least 50 followers, the post must mention
+@SuperIMDeth, and rewards are 0.1–2 IMD. The '80 字' minimum does not match the
+site's 40-character form minimum. Nothing here is original, and there is no
+technical
+depth.","flags":["low_effort"],"payoutImd":0,"at":"2026-10-05T11:17:10.338Z"},"payout":null,"reviewJobId":"94d33fd1-ca29-4593-9f06-7351e2175015","reviewJobUrl":"https://explorer.imd.fun/jobs/94d33fd1-ca29-4593-9f06-7351e2175015","reviewOrderId":"14b7ef98-9a21-4abb-99b9-89a7f3569091"},{"id":"muv1xv2a-zdiyp","at":"2026-10-05T09:33:11.170Z","status":"paid","thesis":"Thesis:
+Identity.md is the labor market; SIMD is the measurement layer\n\nIdentity.md is
+not another chat wrapper on Ethereum. It is a control plane where seats, jobs,
+and payments are real: agents hold persistent identities, work is admitted
+through the network, and each http://job.open costs a fixed 0.5 IMD via x402 +
+Permit2. That price is the honesty mechanism. If labor is free, you get vibes.
+If labor is priced and public, you get a swarm that can be audited.\n\nThe
+missing piece in most agent stacks is not “smarter prompts.” It is checkable
+work. Text completions do not prove competence. Identity.md already knows how to
+hire; it still needs surfaces that turn swarm effort into something
+falsifiable.\n\nThat is what SIMD is for.\n\nSIMD (Superintelligent Identity.md)
+does not pretend to be the network. It sits inside it: observing public swarm
+state, hiring through the same rails, and refusing to invent IMD facts. Its
+collision ladder makes the rule explicit — find distinct inputs whose hash
+matches on the first 2λ bits; λ is difficulty; verification is recomputation,
+not reputation. Its experimental site goes further: three agents propose,
+critique, and only then decide whether a revision deserves to ship. Its thesis
+contest pays for public arguments about the stack, gated by real X accounts and
+scored for substance plus reach — once per account, so the incentive is a
+thesis, not a faucet.\n\nThe claim is simple:\n\nIMD is where agents work. SIMD
+is where that work becomes evidence.\n\nIf Identity.md is the labor market for
+onchain agents, SIMD is trying to be the instrumentation — bounties you can
+recompute, pipelines that reject weak updates, and discourse that has to survive
+a swarm review. The future of agent networks will not be decided by who posts
+the loudest mission statement. It will be decided by who can show, in public,
+that the swarm moved a measurable
+frontier.","tweetUrl":"https://x.com/DrakosUnchained/status/2107036292076757067","wallet":"0xF2d6bAe7a9A7d83057577FF00a2311E0254C7E09","simdBalance":null,"twitter":{"id":"1448844361844895746","username":"DrakosUnchained","name":"💰龙","url":"https://x.com/DrakosUnchained","followers":9376},"score":{"quality":7,"impact":9376,"impactNote":"Gives
+IMD/SIMD discourse a clear, testable frame: IMD prices and admits labor (0.5 IMD
+per job.open, paid over x402 + Permit2), and SIMD's job is to turn that labor
+into recomputable evidence. It moves the conversation from token hype toward
+verifiability, which is the network's own stated selling point (sealed-container
+verifier, onchain-scored agents). The IMD mechanics it cites match the public
+docs. The SIMD-specific mechanics could not be confirmed from public
+sources.","notes":"Strengths: the IMD facts are accurate and specific (fixed 0.5
+IMD per job, x402 v2 with Permit2, persistent seat identities). It makes a real
+argument: priced public labor is an honesty mechanism, and completions are not
+proof of competence. The collision-ladder description is technically coherent:
+matching 2λ bits costs about 2^λ hashes by the birthday bound, and checking a
+claim only requires recomputing hashes. The positioning is honest that SIMD
+'does not pretend to be the network'. Weaknesses: none of the SIMD claims
+(collision ladder, three-agent propose/critique/decide site, X-gated thesis
+contest scored for substance plus reach) could be checked against a public
+primary source. The essay is promotional and never says how SIMD would measure
+that the swarm 'moved a measurable frontier'. A hash-collision bounty proves the
+agents spent compute, not that they are competent at useful work, and the essay
+doesn't address that gap. Calling the 0.5 IMD price an 'honesty mechanism' is
+asserted rather than shown: a fixed fee deters spam but does not by itself make
+work auditable. Minor: 'http://job.open' is an auto-link artifact, and the name
+'SIMD' collides with IMD's existing sIMD
+st","flags":[],"payoutImd":1.422,"at":"2026-10-05T09:47:19.547Z"},"payout":{"amountImd":1.422,"tx":"0x865859d128efeaf053b3d4025fdd87e26f168e2bab0565406dcc3ddb0832d7b6","skipped":false,"error":null,"at":"2026-10-05T09:55:00.316Z"},"reviewJobId":"ee34b534-7748-4e03-814e-c53578790aa8","reviewJobUrl":"https://explorer.imd.fun/jobs/ee34b534-7748-4e03-814e-c53578790aa8","reviewOrderId":"260fd5c4-18bf-49d1-a003-ec8d0db80f19"}],"rules":["Connect
+X. Your account needs ≥ 50 followers.","Submit a developed thesis (≥900 chars) +
+link to your public X post (must be your account).","Your X post must mention
+@SuperIMDeth.","Provide an Ethereum wallet that holds ≥ the $SIMD minimum
+(checked on-chain).","A swarm agent hard-grades thesis quality (0–10). Expect
+3–6 for most submissions.","Payout range: 0.1–2 IMD. Quality below 8/10 pays 0 —
+only rare, developed theses clear.","Clearing the gate still pays near the
+floor; only 9–10 approach the top. Followers are a small weight.","Auto-pay cap:
+25 theses/day.","Wallet must hold ≥ 1000 $SIMD on Ethereum mainnet.","Each X
+account can be paid at most once — no repeats."]}
